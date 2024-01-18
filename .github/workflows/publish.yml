@@ -20,9 +20,8 @@ jobs:
 
             - name: Bump version and set name
               run: |
-                npm version patch --force
-                npm --no-git-tag-version version patch --force
-                echo '{"name": "@dntz/publish_to_npm_using_github_actions", "version": "0.0.3"}' > my-package/package.json
+                npm --no-git-tag-version version patch
+                echo '{"name": "@dntz/publish_to_npm_using_github_actions", "version": "$(npm --no-git-tag-version version)"}' > my-package/package.json
 
             - name: Print updated package.json
               run: cat my-package/package.json
