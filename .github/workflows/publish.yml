@@ -18,20 +18,17 @@ jobs:
                 git config user.email "michael.denton@jet2.com"
                 git config user.name "Michael"
 
-            - name: Set version in package.json
+            - name: Bump version and set name
               run: |
-                echo '{"version": "0.0.3"}' > my-package/package.json
+                npm version patch --force
+                npm --no-git-tag-version version patch --force
+                cp package.json my-package/package.json
 
-            - name: Print package.json Before Bump
+            - name: Print updated package.json
               run: cat my-package/package.json
 
-            - name: Bump version
-              run: npm version patch --force
-
-            - name: Print package.json After Bump
-              run: cat my-package/package.json
-            - name: publish
+            - name: Publish to npm
               run: npm publish --access public
               working-directory: my-package
               env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+                NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }
