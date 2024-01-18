@@ -1,5 +1,5 @@
 {
-    "name": "@mjdenton/publish_to_npm_using_github_actions",
+    "name": "@dntz/publish_to_npm_using_github_actions",
     "version": "0.0.1",
     "description": "📦 npm package tutorial",
     "main": "index.js",
@@ -11,7 +11,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/mjdenton/publish_to_npm_using_github_actions"
+        "url": "https://github.com/dntz/publish_to_npm_using_github_actions"
     },
     "keywords": [
         "npm",
@@ -26,7 +26,7 @@
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/mjdenton/npublish_to_npm_using_github_actions/issues"
+        "url": "https://github.com/dntz/npublish_to_npm_using_github_actions/issues"
     },
-    "homepage": "https://github.com/mjdenton/publish_to_npm_using_github_actions#readme"
+    "homepage": "https://github.com/dntz/publish_to_npm_using_github_actions#readme"
 }
