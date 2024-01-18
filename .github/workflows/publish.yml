@@ -21,8 +21,8 @@ jobs:
             - name: Bump version and set name
               run: |
                 npm version patch
-                VERSION=$(jq -r .version my-package/package.json)
-                echo '{"name": "@dntz/publish_to_npm_using_github_actions", "version": "$VERSION"}' > my-package/package.json
+                export VERSION=$(jq -r .version my-package/package.json)
+                echo '{"name": "@dntz/publish_to_npm_using_github_actions", "version": "'"$VERSION"'"}' > my-package/package.json
 
             - name: Print updated package.json
               run: cat my-package/package.json
@@ -32,4 +32,3 @@ jobs:
               working-directory: my-package
               env:
                 NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-                VERSION: $VERSION
