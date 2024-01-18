@@ -18,8 +18,17 @@ jobs:
                 git config user.email "michael.denton@jet2.com"
                 git config user.name "Michael"
 
+            - name: Set version in package.json
+              run: echo '{"version": "0.0.3"}' > my-package/package.json
+
+            - name: Print package.json Before Bump
+              run: cat my-package/package.json
+
             - name: Bump version
               run: npm version patch
+
+            - name: Print package.json After Bump
+              run: cat my-package/package.json
             - name: publish
               run: npm publish --access public
               working-directory: my-package
