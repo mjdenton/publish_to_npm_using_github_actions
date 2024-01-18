@@ -13,6 +13,8 @@ jobs:
               with:
                   node-version: 12
                   registry-url: https://registry.npmjs.org
+            - name: Bump version
+              run: npm version patch  # or minor/major based on your changes
             - name: publish
               run: npm publish --access public
               working-directory: my-package
