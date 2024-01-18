@@ -1,6 +1,6 @@
 {
     "name": "@dntz/publish_to_npm_using_github_actions",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "📦 npm package tutorial",
     "main": "index.js",
     "scripts": {
