@@ -19,7 +19,8 @@ jobs:
                 git config user.name "Michael"
 
             - name: Set version in package.json
-              run: sed -i 's/"version": ".*"/"version": "0.0.3"/' my-package/package.json
+              run: |
+                echo '{"version": "0.0.3"}' > my-package/package.json
 
             - name: Print package.json Before Bump
               run: cat my-package/package.json
