@@ -27,7 +27,7 @@ jobs:
               run: cat my-package/package.json
 
             - name: Publish to npm
-                run: npm publish --access public
-                working-directory: my-package
-                env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+              run: npm publish --access public
+              working-directory: my-package
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
