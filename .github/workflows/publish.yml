@@ -26,7 +26,7 @@ jobs:
               run: cat my-package/package.json
 
             - name: Bump version
-              run: npm version patch
+              run: npm version patch --force
 
             - name: Print package.json After Bump
               run: cat my-package/package.json
