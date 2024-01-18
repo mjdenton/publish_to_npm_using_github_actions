@@ -13,6 +13,13 @@ jobs:
               with:
                   node-version: 14
                   registry-url: https://registry.npmjs.org
+            - name: Set Git identity for version bump
+              run: |
+                git config user.email "michael.denton@jet2.com"
+                git config user.name "Michael"
+
+            - name: Bump version
+              run: npm version patch
             - name: publish
               run: npm publish --access public
               working-directory: my-package
